@@ -8,6 +8,16 @@ This Mosquitto image provides an MQTT broker for the Raspberry PI, the default c
 
 The purpose of this image is to unify our base with [Balena Raspberry Pi 3 Images](https://www.balena.io/docs/reference/base-images/base-images-ref/).
 
+## Docker Image
+
+Our Docker image is based on a [Balena base image](https://www.balena.io/docs/reference/base-images/base-images/). It is targeted at Raspberry Pi 3, you can check all available images [here](https://www.balena.io/docs/reference/base-images/base-images-ref/) (search for the 'Raspberry Pi 3' section). See [eclipse-mosquitto](https://hub.docker.com/_/eclipse-mosquitto) for more detail.
+
+---
+
+Please note that we provide only the Raspberry Pi image, tagged as **rpi**. We use the official, non-modified PC image for testing.
+
+---
+
 ## Running the image
 
 The latest image is available on [Docker Hub](https://cloud.docker.com/u/raspberryvalley/repository/docker/raspberryvalley/mosquitto).
@@ -15,8 +25,10 @@ The latest image is available on [Docker Hub](https://cloud.docker.com/u/raspber
 You can pull the image from our Raspberry Valley Docker Hub. Simply type the following:
 
 ```bash
-docker push raspberryvalley/mosquitto:rpi
+docker pull raspberryvalley/mosquitto:rpi
 ```
+
+Note: This is an optional step which fits our workflow. If you don't pull the image, the run scripts below will do it for you.
 
 And launch with something like this:
 
@@ -45,3 +57,10 @@ docker build -t "mymosquittoimage" .
 * [Mosquitto](https://mosquitto.org) - Official Mosquitto site
 * [Mosquitto on Docker](https://hub.docker.com/_/eclipse-mosquitto) - Official Docker image
 * [docker-mosquitto on Docker Hub](https://cloud.docker.com/u/raspberryvalley/repository/docker/raspberryvalley/mosquitto)
+
+Raspberry Valley makerspace links
+
+* [Raspberry Valley](https://raspberry-valley.azurewebsites.net) - Other things we make and do
+* [Raspberry Valley on Twitter](https://twitter.com/RaspberryValley)
+* [Raspberry Valley on Github](https://github.com/raspberryvalley)
+* [Raspberry Valley Docker Hub Images](hub.docker.com/r/raspberryvalley/)

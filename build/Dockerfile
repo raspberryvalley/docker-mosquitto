@@ -1,3 +1,11 @@
+# Mosquitto image for Raspberry Pi in the Raspberry Valley makerspace.
+
+# Raspberry Valley is a makerspace in Sweden, Karlskrona. You can visit our sites and check what's developing: 
+# * Knowledge base: https://raspberry-valley.azurewebsites.net
+# * Github pages: https://github.com/raspberryvalley
+# * Docker hub: hub.docker.com/r/raspberryvalley/
+# * Follow on Twitter: https://twitter.com/RaspberryValley
+
 FROM balenalib/raspberrypi3:stretch-run
 LABEL maintainer = Raspberry Valley <raspberryvalley@outlook.com>
 

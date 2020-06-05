@@ -50,6 +50,36 @@ To build your own image, follow the steps below:
 docker build -t "mymosquittoimage" .
 ```
 
+## Testing your own image
+
+To test everything works as expected follow the simple steps below. We will be using MQTT clients, which need to be installed first:
+
+```bash
+sudo apt install mosquitto-clients
+```
+
+Once installed:
+
+* launch a container from the image you created above, i.e. **mymosquittoimage** (we'll create a temporary container, and keep a terminal open)
+
+```bash
+docker run -it -p 1883:1883 --rm mymosquittoimage
+```
+
+* Now open a terminal and subscribe t a test topic:
+
+```bash
+mosquitto_sub -t "test"
+```
+
+* In a third terminal window, send yourself a message:
+
+```bash
+mosquitto_pub -m "test message" -t "test"
+```
+
+You should see, in the second terminal, that the message was received.
+
 ## About
 
 Raspberry Valley is a maker community in Karlskrona, Sweden, sponsored by [Dynapac](https://dynapac.com/en). We run makerspaces every week, working with Raspberry Pis, Arduinos and other interesting hardware.

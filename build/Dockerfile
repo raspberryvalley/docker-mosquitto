@@ -10,13 +10,12 @@ FROM balenalib/raspberrypi3:stretch-run
 LABEL maintainer = Raspberry Valley <raspberryvalley@outlook.com>
 
 RUN apt-get update \
- && apt-get full-upgrade \
- && apt-get install -y wget \
- && apt-get install -y apt-transport-https \
+ && apt-get install -y --no-install-recommends wget \
+ && apt-get install -y --no-install-recommends apt-transport-https \
  && wget -q -O - http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key | apt-key add - \
  && wget -q -O /etc/apt/sources.list.d/mosquitto-stretch.list http://repo.mosquitto.org/debian/mosquitto-stretch.list \
  && apt-get update \
- && apt-get install -y mosquitto \
+ && apt-get install -y --no-install-recommends mosquitto \
  && apt-get purge -y --auto-remove \
  && rm -rf /var/lib/apt/lists/* \
  && apt-get clean
